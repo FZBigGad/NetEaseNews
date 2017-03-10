@@ -15,6 +15,7 @@
 		14CD1CB81E72874300AF9D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1CB61E72874300AF9D63 /* LaunchScreen.storyboard */; };
 		14CD1CC41E72BEF700AF9D63 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1CC31E72BEF700AF9D63 /* topic_news.json */; };
 		14CD1CCA1E72C16100AF9D63 /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CC91E72C16100AF9D63 /* ChannelModel.m */; };
+		14CD1CCD1E72C7A100AF9D63 /* ChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */; };
 		20923456E5B3C584F9878A36 /* libPods-NetEaseNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0270A4014022C5D7BFDABAD3 /* libPods-NetEaseNews.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		14CD1CC31E72BEF700AF9D63 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		14CD1CC81E72C16000AF9D63 /* ChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelModel.h; sourceTree = "<group>"; };
 		14CD1CC91E72C16100AF9D63 /* ChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelModel.m; sourceTree = "<group>"; };
+		14CD1CCB1E72C7A100AF9D63 /* ChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLabel.h; sourceTree = "<group>"; };
+		14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLabel.m; sourceTree = "<group>"; };
 		968263485E699D01821BE242 /* Pods-NetEaseNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CB94BBD79B835811001682 /* Pods-NetEaseNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +108,8 @@
 		14CD1CC01E7294AC00AF9D63 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				14CD1CCB1E72C7A100AF9D63 /* ChannelLabel.h */,
+				14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				14CD1CAD1E72874300AF9D63 /* AppDelegate.m in Sources */,
 				14CD1CAA1E72874300AF9D63 /* main.m in Sources */,
 				14CD1CCA1E72C16100AF9D63 /* ChannelModel.m in Sources */,
+				14CD1CCD1E72C7A100AF9D63 /* ChannelLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
