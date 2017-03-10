@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
-@interface NetReuqestManager : NSObject
+typedef enum : NSUInteger {
+    GETType,
+    POSTType,
+} RequestType;
+
+@interface NetReuqestManager : AFHTTPSessionManager
 
 
 + (instancetype)shareManager;
 
-- (void)downLoadDataWithURLStr:(NSString *)urlStr;
+- (void)downLoadDataWithURLStr:(NSString *)urlStr andReuqestType:(RequestType)type andResponse:(void(^)(id))response andComBlock:(void(^)(NSError *))ComBlock;
+
 @end

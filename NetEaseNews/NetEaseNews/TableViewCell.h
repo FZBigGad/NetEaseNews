@@ -1,5 +1,5 @@
 //
-//  FZNewsCollectionCell.h
+//  TableViewCell.h
 //  NetEaseNews
 //
 //  Created by fangzhengwei on 2017/3/10.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FZNewsCollectionCell : UICollectionViewCell
+@interface TableViewCell : UITableViewCell
 
-@property (nonatomic, copy) NSString *urlStr;
 @end

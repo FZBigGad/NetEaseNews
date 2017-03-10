@@ -11,8 +11,16 @@
 
 @implementation TableViewModel
 
-+ (void)createTableViewModel:(void(^)(NSArray *))arrayData{
++ (void)createTableViewModelDic:(NSDictionary *)dictData and:(void(^)(NSArray *))arrayData {
     
+    NSString *key = dictData.allKeys.firstObject;
     
+    NSArray *array = [dictData objectForKey:key];
+    
+    array = [NSArray yy_modelArrayWithClass:[TableViewModel class] json:array];
+    
+    if (arrayData) {
+        arrayData(array);
+    }
 }
 @end

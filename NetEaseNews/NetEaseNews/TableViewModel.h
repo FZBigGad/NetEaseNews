@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <YYModel.h>
 @interface TableViewModel : NSObject
 
 /// 新闻标题
@@ -23,5 +23,5 @@
 /// 大图标记
 @property (nonatomic, assign) BOOL imgType;
 
-+ (void)createTableViewModel:(void(^)(NSArray *))arrayData;
++ (void)createTableViewModelDic:(NSDictionary *)dictData and:(void(^)(NSArray *))arrayData;
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ChannelModel.h"
 #import "ChannelLabel.h"
+#import "FZNewsCollectionCell.h"
 #define scrollLabelWidth 80
 #define scrollLabelHeight 44
 
@@ -36,6 +37,8 @@
     [self reloadNewsCollection];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.newsScrollView.contentInset = UIEdgeInsetsMake(0, 20, 0, 0);
 }
 
 - (void)reloadNewsScrollView{
@@ -57,6 +60,8 @@
     
     self.newsScrollView.showsVerticalScrollIndicator = NO;
     self.newsScrollView.showsHorizontalScrollIndicator = NO;
+    
+    
 }
 
 - (void)reloadNewsCollection{
@@ -84,9 +89,13 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
+    FZNewsCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+    ChannelModel *model = self.channelData[indexPath.row];
+    
+    NSString *str = [NSString stringWithFormat:@"%@/0-20.html",model.tid];
+    
+    cell.urlStr = str;
     
     return cell;
 }
