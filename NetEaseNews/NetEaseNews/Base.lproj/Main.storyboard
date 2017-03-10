@@ -60,10 +60,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="网易新闻" id="pO2-Ny-Jlm"/>
+                    <connections>
+                        <outlet property="newsCollection" destination="kgn-Xc-1Mr" id="Df1-RM-Zd6"/>
+                        <outlet property="newsScrollView" destination="HEj-nc-6NU" id="iw6-sK-DYv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-1086"/>
+            <point key="canvasLocation" x="567" y="-1101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oOS-sZ-Y9m">
