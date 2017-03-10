@@ -1,0 +1,10 @@
+
+platform :ios, '9.0'
+
+target 'NetEaseNews' do
+
+pod 'AFNetworking'
+pod 'YYModel'
+pod 'SDWebImage'
+
+end
