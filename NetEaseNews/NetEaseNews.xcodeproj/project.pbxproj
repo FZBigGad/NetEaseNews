@@ -16,6 +16,10 @@
 		14CD1CC41E72BEF700AF9D63 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1CC31E72BEF700AF9D63 /* topic_news.json */; };
 		14CD1CCA1E72C16100AF9D63 /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CC91E72C16100AF9D63 /* ChannelModel.m */; };
 		14CD1CCD1E72C7A100AF9D63 /* ChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */; };
+		14CD1CD01E72CF8D00AF9D63 /* FZNewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CCF1E72CF8D00AF9D63 /* FZNewsCollectionCell.m */; };
+		14CD1CFC1E72D35600AF9D63 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1CFB1E72D35600AF9D63 /* TableViewModel.m */; };
+		14CD1CFE1E72D44E00AF9D63 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1CFD1E72D44E00AF9D63 /* Contents.json */; };
+		14CD1D021E72D62400AF9D63 /* NetReuqestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1D011E72D62400AF9D63 /* NetReuqestManager.m */; };
 		20923456E5B3C584F9878A36 /* libPods-NetEaseNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0270A4014022C5D7BFDABAD3 /* libPods-NetEaseNews.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,13 @@
 		14CD1CC91E72C16100AF9D63 /* ChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelModel.m; sourceTree = "<group>"; };
 		14CD1CCB1E72C7A100AF9D63 /* ChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLabel.h; sourceTree = "<group>"; };
 		14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLabel.m; sourceTree = "<group>"; };
+		14CD1CCE1E72CF8D00AF9D63 /* FZNewsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZNewsCollectionCell.h; sourceTree = "<group>"; };
+		14CD1CCF1E72CF8D00AF9D63 /* FZNewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZNewsCollectionCell.m; sourceTree = "<group>"; };
+		14CD1CFA1E72D35600AF9D63 /* TableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
+		14CD1CFB1E72D35600AF9D63 /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		14CD1CFD1E72D44E00AF9D63 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		14CD1D001E72D62400AF9D63 /* NetReuqestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetReuqestManager.h; sourceTree = "<group>"; };
+		14CD1D011E72D62400AF9D63 /* NetReuqestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetReuqestManager.m; sourceTree = "<group>"; };
 		968263485E699D01821BE242 /* Pods-NetEaseNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CB94BBD79B835811001682 /* Pods-NetEaseNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +84,7 @@
 		14CD1CA71E72874300AF9D63 /* NetEaseNews */ = {
 			isa = PBXGroup;
 			children = (
+				14CD1CFF1E72D56B00AF9D63 /* Tools */,
 				14CD1CC21E72BEE100AF9D63 /* Others */,
 				14CD1CC11E7294BC00AF9D63 /* Models */,
 				14CD1CC01E7294AC00AF9D63 /* Views */,
@@ -110,6 +122,8 @@
 			children = (
 				14CD1CCB1E72C7A100AF9D63 /* ChannelLabel.h */,
 				14CD1CCC1E72C7A100AF9D63 /* ChannelLabel.m */,
+				14CD1CCE1E72CF8D00AF9D63 /* FZNewsCollectionCell.h */,
+				14CD1CCF1E72CF8D00AF9D63 /* FZNewsCollectionCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -119,6 +133,8 @@
 			children = (
 				14CD1CC81E72C16000AF9D63 /* ChannelModel.h */,
 				14CD1CC91E72C16100AF9D63 /* ChannelModel.m */,
+				14CD1CFA1E72D35600AF9D63 /* TableViewModel.h */,
+				14CD1CFB1E72D35600AF9D63 /* TableViewModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -126,9 +142,19 @@
 		14CD1CC21E72BEE100AF9D63 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				14CD1CFD1E72D44E00AF9D63 /* Contents.json */,
 				14CD1CC31E72BEF700AF9D63 /* topic_news.json */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		14CD1CFF1E72D56B00AF9D63 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				14CD1D001E72D62400AF9D63 /* NetReuqestManager.h */,
+				14CD1D011E72D62400AF9D63 /* NetReuqestManager.m */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		A97A1D5395429AAC2007F709 /* Pods */ = {
@@ -209,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CD1CFE1E72D44E00AF9D63 /* Contents.json in Resources */,
 				14CD1CB81E72874300AF9D63 /* LaunchScreen.storyboard in Resources */,
 				14CD1CB51E72874300AF9D63 /* Assets.xcassets in Resources */,
 				14CD1CC41E72BEF700AF9D63 /* topic_news.json in Resources */,
@@ -271,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CD1CD01E72CF8D00AF9D63 /* FZNewsCollectionCell.m in Sources */,
+				14CD1D021E72D62400AF9D63 /* NetReuqestManager.m in Sources */,
 				14CD1CB01E72874300AF9D63 /* ViewController.m in Sources */,
+				14CD1CFC1E72D35600AF9D63 /* TableViewModel.m in Sources */,
 				14CD1CAD1E72874300AF9D63 /* AppDelegate.m in Sources */,
 				14CD1CAA1E72874300AF9D63 /* main.m in Sources */,
 				14CD1CCA1E72C16100AF9D63 /* ChannelModel.m in Sources */,
