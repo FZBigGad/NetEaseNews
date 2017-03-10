@@ -38,7 +38,6 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.newsScrollView.contentInset = UIEdgeInsetsMake(0, 20, 0, 0);
 }
 
 - (void)reloadNewsScrollView{
@@ -50,6 +49,8 @@
         label.font = [UIFont systemFontOfSize:15];
         
         label.text = self.channelData[i].tname;
+        
+        label.textAlignment = NSTextAlignmentCenter;
         
         [self.newsScrollView addSubview:label];
                                
