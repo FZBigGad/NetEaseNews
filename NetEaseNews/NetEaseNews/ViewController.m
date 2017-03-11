@@ -12,8 +12,8 @@
 #import "FZNewsCollectionCell.h"
 #define scrollLabelWidth 80
 #define scrollLabelHeight 44
-
-@interface ViewController ()<UICollectionViewDataSource>
+#define ScreenWidth 375
+@interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *newsScrollView;
 
@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSArray<ChannelModel *> *channelData;
 
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+
+@property (nonatomic, strong) NSMutableArray *channelArray;
 
 @end
 
@@ -55,9 +57,18 @@
         [self.newsScrollView addSubview:label];
                                
         label.frame = CGRectMake(i * scrollLabelWidth, 0, scrollLabelWidth, scrollLabelHeight);
+        
+        label.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapGesture:)];
+        
+        [label addGestureRecognizer:tap];
+        
+        [self.channelArray addObject:label];
     }
     
     self.newsScrollView.contentSize = CGSizeMake(self.channelData.count * scrollLabelWidth , scrollLabelHeight);
+    
     
     self.newsScrollView.showsVerticalScrollIndicator = NO;
     self.newsScrollView.showsHorizontalScrollIndicator = NO;
@@ -65,10 +76,50 @@
     
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat offsetXScale = scrollView.contentOffset.x / ScreenWidth;
+    
+    
+    
+}
+
+- (void)labelTapGesture:(UITapGestureRecognizer *)gesture{
+    
+    ChannelLabel *label = (ChannelLabel *)gesture.view;
+    
+    [self channelLabelScrollToMiddle:label];
+    
+    NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[self.channelArray indexOfObject:label] inSection:0];
+    
+    [self.newsCollection scrollToItemAtIndexPath:indexpath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+- (void)channelLabelScrollToMiddle:(UILabel *)channelLabel{
+    
+    CGFloat offsetX = channelLabel.center.x - ScreenWidth * 0.5;
+    
+    if (offsetX > 0 && offsetX < self.newsScrollView.contentSize.width - ScreenWidth) {
+        
+        [self.newsScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    }
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    NSInteger index = scrollView.contentOffset.x / ScreenWidth;
+    
+    ChannelLabel *label = [self.channelArray objectAtIndex:index];
+    
+    [self channelLabelScrollToMiddle:label];
+    
+}
+
 - (void)reloadNewsCollection{
     
     self.newsCollection.dataSource = self;
-    
+    self.newsCollection.delegate = self;
     self.flowLayout.itemSize = CGSizeMake(self.newsCollection.bounds.size.width, self.newsCollection.bounds.size.height);
     
     self.flowLayout.minimumLineSpacing = 0;
@@ -99,6 +150,14 @@
     cell.urlStr = str;
     
     return cell;
+}
+
+- (NSMutableArray *)channelArray{
+    if (!_channelArray) {
+        _channelArray = [NSMutableArray array];
+    }
+    
+    return _channelArray;
 }
 - (void)loadData{
     

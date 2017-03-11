@@ -42,7 +42,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BigPictureCell" bundle:nil] forCellReuseIdentifier:@"bigId"];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ImagesCell" bundle:nil] forCellReuseIdentifier:@"bigId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ImagesCell" bundle:nil] forCellReuseIdentifier:@"ImagesId"];
 }
 - (void)setUrlStr:(NSString *)urlStr{
     
@@ -78,6 +78,10 @@
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"bigId" forIndexPath:indexPath];
 
+    }else if(model.imgextra.count == 2){
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ImagesId" forIndexPath:indexPath];
+        
     }else{
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
@@ -104,6 +108,10 @@
     if (model.imgType == YES) {
         
         return 180;
+        
+    }else if(model.imgextra.count == 2){
+        
+        return 150;
     }
     return 80;
 }
