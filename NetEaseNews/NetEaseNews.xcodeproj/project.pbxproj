@@ -22,6 +22,9 @@
 		14CD1D021E72D62400AF9D63 /* NetReuqestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1D011E72D62400AF9D63 /* NetReuqestManager.m */; };
 		14CD1D061E72E68F00AF9D63 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1D041E72E68F00AF9D63 /* TableViewCell.m */; };
 		14CD1D071E72E68F00AF9D63 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1D051E72E68F00AF9D63 /* TableViewCell.xib */; };
+		14CD1D091E73CE6600AF9D63 /* BigPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1D081E73CE6600AF9D63 /* BigPictureCell.xib */; };
+		14CD1D0B1E73D8BC00AF9D63 /* ImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CD1D0A1E73D8BC00AF9D63 /* ImagesCell.xib */; };
+		14CD1D0E1E73E0B600AF9D63 /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD1D0D1E73E0B600AF9D63 /* ImagesModel.m */; };
 		20923456E5B3C584F9878A36 /* libPods-NetEaseNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0270A4014022C5D7BFDABAD3 /* libPods-NetEaseNews.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,10 @@
 		14CD1D031E72E68F00AF9D63 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		14CD1D041E72E68F00AF9D63 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		14CD1D051E72E68F00AF9D63 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		14CD1D081E73CE6600AF9D63 /* BigPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigPictureCell.xib; sourceTree = "<group>"; };
+		14CD1D0A1E73D8BC00AF9D63 /* ImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesCell.xib; sourceTree = "<group>"; };
+		14CD1D0C1E73E0B600AF9D63 /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
+		14CD1D0D1E73E0B600AF9D63 /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		968263485E699D01821BE242 /* Pods-NetEaseNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CB94BBD79B835811001682 /* Pods-NetEaseNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEaseNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEaseNews/Pods-NetEaseNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +139,8 @@
 				14CD1D031E72E68F00AF9D63 /* TableViewCell.h */,
 				14CD1D041E72E68F00AF9D63 /* TableViewCell.m */,
 				14CD1D051E72E68F00AF9D63 /* TableViewCell.xib */,
+				14CD1D081E73CE6600AF9D63 /* BigPictureCell.xib */,
+				14CD1D0A1E73D8BC00AF9D63 /* ImagesCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -143,6 +152,8 @@
 				14CD1CC91E72C16100AF9D63 /* ChannelModel.m */,
 				14CD1CFA1E72D35600AF9D63 /* TableViewModel.h */,
 				14CD1CFB1E72D35600AF9D63 /* TableViewModel.m */,
+				14CD1D0C1E73E0B600AF9D63 /* ImagesModel.h */,
+				14CD1D0D1E73E0B600AF9D63 /* ImagesModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,10 +254,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CD1D091E73CE6600AF9D63 /* BigPictureCell.xib in Resources */,
 				14CD1CFE1E72D44E00AF9D63 /* Contents.json in Resources */,
 				14CD1D071E72E68F00AF9D63 /* TableViewCell.xib in Resources */,
 				14CD1CB81E72874300AF9D63 /* LaunchScreen.storyboard in Resources */,
 				14CD1CB51E72874300AF9D63 /* Assets.xcassets in Resources */,
+				14CD1D0B1E73D8BC00AF9D63 /* ImagesCell.xib in Resources */,
 				14CD1CC41E72BEF700AF9D63 /* topic_news.json in Resources */,
 				14CD1CB31E72874300AF9D63 /* Main.storyboard in Resources */,
 			);
@@ -316,6 +329,7 @@
 				14CD1CAA1E72874300AF9D63 /* main.m in Sources */,
 				14CD1CCA1E72C16100AF9D63 /* ChannelModel.m in Sources */,
 				14CD1CCD1E72C7A100AF9D63 /* ChannelLabel.m in Sources */,
+				14CD1D0E1E73E0B600AF9D63 /* ImagesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

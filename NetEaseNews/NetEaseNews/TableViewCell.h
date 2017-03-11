@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TableViewModel.h"
 @interface TableViewCell : UITableViewCell
+
+@property (nonatomic, strong) TableViewModel *basicmodel;
 
 @end

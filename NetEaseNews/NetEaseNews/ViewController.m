@@ -92,7 +92,7 @@
     
     FZNewsCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
     
-    ChannelModel *model = self.channelData[indexPath.row];
+    ChannelModel *model = self.channelData[indexPath.item];
     
     NSString *str = [NSString stringWithFormat:@"%@/0-20.html",model.tid];
     

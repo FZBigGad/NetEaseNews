@@ -11,26 +11,38 @@
 #import "FZNewsCollectionCell.h"
 #import "NetReuqestManager.h"
 #import "TableViewModel.h"
-static NSString *cellId = @"cellId";
-@interface FZNewsCollectionCell ()<UITableViewDataSource>
+#define ScreenWidth 375
+#define collectionHeight 667- 64-44
+#import "TableViewCell.h"
+
+
+@interface FZNewsCollectionCell ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray<TableViewModel *> *tableViewData;
 
 @property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation FZNewsCollectionCell
 
-- (void)prepareForReuse{
+
+- (void)awakeFromNib{
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
+    [super awakeFromNib];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, collectionHeight) style:UITableViewStylePlain];
     
     [self.contentView addSubview:self.tableView];
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
-
+    [self.tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"cellId"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"BigPictureCell" bundle:nil] forCellReuseIdentifier:@"bigId"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ImagesCell" bundle:nil] forCellReuseIdentifier:@"bigId"];
 }
 - (void)setUrlStr:(NSString *)urlStr{
     
@@ -40,8 +52,10 @@ static NSString *cellId = @"cellId";
            
            self.tableViewData = tableViewData;
            
-           [self.tableView reloadData];
        }];
+         //刷新数据
+         [self.tableView reloadData];
+       
    } andComBlock:^(NSError * error) {
        
        NSLog(@"%@",error);
@@ -56,12 +70,22 @@ static NSString *cellId = @"cellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     TableViewModel *model = self.tableViewData[indexPath.row];
     
-    cell.textLabel.text = model.title;
+    TableViewCell *cell;
     
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+    if (model.imgType == YES) {
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"bigId" forIndexPath:indexPath];
+
+    }else{
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
+
+    }
+
+    
+    cell.basicmodel = model;
     
     return cell;
 }
@@ -72,4 +96,40 @@ static NSString *cellId = @"cellId";
     }
     return _tableViewData;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TableViewModel *model = self.tableViewData[indexPath.row];
+    
+    if (model.imgType == YES) {
+        
+        return 180;
+    }
+    return 80;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,8 +8,15 @@
 //
 
 #import "TableViewModel.h"
+#import "ImagesModel.h"
 
 @implementation TableViewModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    
+    return @{@"imgextra" : [ImagesModel class]};
+}
+
 
 + (void)createTableViewModelDic:(NSDictionary *)dictData and:(void(^)(NSArray *))arrayData {
     
@@ -22,5 +29,12 @@
     if (arrayData) {
         arrayData(array);
     }
+}
+
+- (NSString *)description{
+    
+    NSString *str = [NSString stringWithFormat:@"%@-",self.title];
+    
+    return str;
 }
 @end

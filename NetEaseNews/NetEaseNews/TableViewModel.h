@@ -17,7 +17,7 @@
 /// 新闻来源
 @property (nonatomic,copy) NSString *source;
 /// 新闻回复数
-@property (nonatomic,strong) NSNumber *replyCount;
+@property (nonatomic,assign) NSInteger replyCount;
 /// 多张配图
 @property (nonatomic, strong) NSArray *imgextra;
 /// 大图标记
