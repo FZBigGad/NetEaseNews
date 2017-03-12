@@ -65,6 +65,11 @@
         [label addGestureRecognizer:tap];
         
         [self.channelArray addObject:label];
+        
+        if (i == 0) {
+            
+            label.scale = 1;
+        }
     }
     
     self.newsScrollView.contentSize = CGSizeMake(self.channelData.count * scrollLabelWidth , scrollLabelHeight);
@@ -84,17 +89,16 @@
     
     CGFloat labelScale = offsetXScale - index;
     
-    //左label
-    ChannelLabel *leftLabel = [self.channelArray objectAtIndex:index];
-    //右label
-    ChannelLabel *rightLabel = [self.channelArray objectAtIndex:index + 1];
-    
-    leftLabel.scale = 1 - labelScale;
-    
-    rightLabel.scale = labelScale;
-    
-    
-    
+    if (index < self.channelArray.count - 1) {
+        //左label
+        ChannelLabel *leftLabel = [self.channelArray objectAtIndex:index];
+        //右label
+        ChannelLabel *rightLabel = [self.channelArray objectAtIndex:index + 1];
+        
+        leftLabel.scale = 1 - labelScale;
+        
+        rightLabel.scale = labelScale;
+    }
 }
 
 - (void)labelTapGesture:(UITapGestureRecognizer *)gesture{
@@ -106,6 +110,19 @@
     NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[self.channelArray indexOfObject:label] inSection:0];
     
     [self.newsCollection scrollToItemAtIndexPath:indexpath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    
+    for (ChannelLabel *label1 in self.channelArray) {
+        
+        if (label == label1) {
+            
+            label1.scale = 1;
+            
+        }else{
+            
+            label1.scale = 0;
+        }
+    }
+
 }
 
 - (void)channelLabelScrollToMiddle:(UILabel *)channelLabel{
@@ -127,17 +144,6 @@
     
     [self channelLabelScrollToMiddle:label];
     
-    for (ChannelLabel *label in self.channelArray) {
-        
-        if (self.channelArray[index] == label) {
-            
-            label.scale = 1;
-            
-        }else{
-            
-            label.scale = 0;
-        }
-    }
 }
 
 - (void)reloadNewsCollection{
