@@ -80,6 +80,19 @@
     
     CGFloat offsetXScale = scrollView.contentOffset.x / ScreenWidth;
     
+    NSInteger index = (int)offsetXScale;
+    
+    CGFloat labelScale = offsetXScale - index;
+    
+    //左label
+    ChannelLabel *leftLabel = [self.channelArray objectAtIndex:index];
+    //右label
+    ChannelLabel *rightLabel = [self.channelArray objectAtIndex:index + 1];
+    
+    leftLabel.scale = 1 - labelScale;
+    
+    rightLabel.scale = labelScale;
+    
     
     
 }
@@ -114,6 +127,17 @@
     
     [self channelLabelScrollToMiddle:label];
     
+    for (ChannelLabel *label in self.channelArray) {
+        
+        if (self.channelArray[index] == label) {
+            
+            label.scale = 1;
+            
+        }else{
+            
+            label.scale = 0;
+        }
+    }
 }
 
 - (void)reloadNewsCollection{
